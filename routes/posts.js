@@ -19,8 +19,8 @@ router.get('/', function (req, res, next) {
     .catch(next)
 })
 
-// POST /posts 发表一篇文章
-router.post('/', checkLogin, function (req, res, next) {
+// POST /posts/create 发表一篇文章
+router.post('/create', checkLogin, function (req, res, next) {
   const author = req.session.user._id
   const title = req.fields.title
   const content = req.fields.content
